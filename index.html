@@ -23,7 +23,7 @@
 		form below & Submit to see total estimated cost to your pocket </h3> 
 
 		 	
-		<form id="insurance" >
+		<form id="insurance" method="post" >
 		
 			<p>
 				
@@ -481,86 +481,18 @@
 //				alert(member_all_paid_ded);
 
 				if (agreegate_j == true) {
-//					console.log(agreegate_j);
-//					alert(1);
-//					if (Tot_cost_family_1 <= deductible_I_id_j) {
 						var member_1_paid_ded =  Tot_cost_family_1;
-//						var member_1_paid_coins = 0;
-//						alert(1);
-//						member_1_paid_copay = 0;
-	//				}
-//					if (Tot_cost_family_1 > deductible_I_id_j) {
-//						alert(deductible_I_id_j);
-//						var member_1_paid_ded =  deductible_I_id_j;
-//						var member_1_paid_coins = (Tot_cost_family_1 - deductible_I_id_j)*(100 - coinsurance_id_j)/100;
-//						alert(1 - (90/100));
-//						member_1_paid_copay = 0;
-		//			}
-//							alert(member_1_paid_ded);
-	//						alert(member_1_paid_coins);
-							
-//					if (Tot_cost_family_2 <= deductible_I_id_j) {
 						var member_2_paid_ded =  Tot_cost_family_2;
-		//				var member_2_paid_coins = 0;
-			//		}
-//					if (Tot_cost_family_2 > deductible_I_id_j) {
-	//					var member_2_paid_ded =  deductible_I_id_j;
-		//				var member_2_paid_coins = (Tot_cost_family_2 - deductible_I_id_j)*(100 - coinsurance_id_j)/100;
-//						alert(member_2_paid_ded);
-//						alert(member_2_paid_coins);
-//					}
-
-//							alert(member_2_paid_ded);
-	//						alert(member_2_paid_coins);
-							
-//					if (Tot_cost_family_3 <= deductible_I_id_j) {
 						var member_3_paid_ded =  Tot_cost_family_3;
-		//				var member_3_paid_coins = 0;
-//					}
-	//				if (Tot_cost_family_3 > deductible_I_id_j) {
-		//				var member_3_paid_ded =  deductible_I_id_j;
-			//			var member_3_paid_coins = (Tot_cost_family_3 - deductible_I_id_j)*(100 - coinsurance_id_j)/100;
-//						alert(member_3_paid_ded);
-//						alert(member_3_paid_coins);
-//					}
-//							alert(member_3_paid_ded);
-	//						alert(member_3_paid_coins);
-
-
-					
-//					if (Tot_cost_family_4 <= deductible_I_id_j) {
 						var member_4_paid_ded =  Tot_cost_family_4;
-		//				var member_4_paid_coins = 0;
-			//		}
-//					if (Tot_cost_family_4 > deductible_I_id_j) {
-		//				var member_4_paid_ded =  deductible_I_id_j;
-		//				var member_4_paid_coins = (Tot_cost_family_4 - deductible_I_id_j)*(100 - coinsurance_id_j)/100;
-//						alert(member_4_paid_ded);	
-	//					alert(member_4_paid_coins);
-//					}
-					
-//							alert(member_4_paid_ded);
-			//				alert(member_4_paid_coins);
 						if (+member_1_paid_ded + +member_2_paid_ded + +member_3_paid_ded + +member_4_paid_ded > deductible_F_id_j) {
-		//				alert(123);
-		//				alert(member_1_paid_ded);
-			//			alert(member_2_paid_ded);
-				//		alert(member_3_paid_ded);
-					//	alert(member_4_paid_ded);
-
-			//			alert(+member_1_paid_ded + +member_2_paid_ded + +member_3_paid_ded + +member_4_paid_ded);
 							var member_all_paid_ded = deductible_F_id_j;
-	//					var member_all_paid_coins = (+Tot_cost_family_1 + +Tot_cost_family_2 + +Tot_cost_family_3 + +Tot_cost_family_4 - 
-		//				    member_all_paid_ded - member_all_paid_copay)*(100 - coinsurance_id_j)/100;
 						
 							var member_all_paid_coins = (+Tot_cost_family_1 + +Tot_cost_family_2 + +Tot_cost_family_3 + +Tot_cost_family_4 - 
 								member_all_paid_ded - member_all_paid_copay)*(100 - coinsurance_id_j)/100;
-			//				alert(member_all_paid_coins);
+//								alert(6);
+//								alert(member_all_paid_coins);
 
-			//					alert('coins ' + member_all_paid_coins);
-				//				alert('out of p:' + outofpocket_F_id_j);
-					//			alert('ded:' + member_all_paid_ded);
-						//		alert('copay:' + member_all_paid_copay);
 							
 							if (+member_all_paid_ded +  +member_all_paid_coins + +member_all_paid_copay > +outofpocket_F_id_j) {
 								member_all_paid_coins = outofpocket_F_id_j - member_all_paid_ded -member_all_paid_copay;
@@ -569,21 +501,34 @@
 							}
 						}
 						else {
-							alert(35);
+//							alert(35);
+//							alert(member_all_paid_ded);
+//							alert(member_1_paid_ded);
+//							alert(member_2_paid_ded);
+//							alert(member_3_paid_ded);
+//							alert(member_4_paid_ded);
 							var member_all_paid_ded = +member_1_paid_ded + +member_2_paid_ded + +member_3_paid_ded + +member_4_paid_ded ;
-//							var member_all_paid_ded = 0
+							var member_all_paid_coins =  0;
+//							alert(member_all_paid_ded);
 						}
 					
 				}
 
 				
+//					alert(1);
 					var tot_annual_premium_j = per_paycheck_premium_j * per_paycheck_premium_j_mon * 2 ;
-		//			var member_insurance_paid_coins = (+Tot_cost_family_1 + Tot_cost_family_2 + +Tot_cost_family_3 + +Tot_cost_family_4 - 
-			//		member_all_paid_ded - member_all_paid_coins);
+//					alert(4);
 					var member_FSA_HSA_savings = +FSA_contribution_id_j*tax_bracket_id_j/100 + +HSA_contribution_id_j*tax_bracket_id_j/100 + 
 						+empHSA_contribution_id_j;
+//					alert(3);
 					var member_insurance_paid_coins = Tot_cost_family_1 + Tot_cost_family_2 + Tot_cost_family_3 + Tot_cost_family_4 - member_all_paid_ded
 						- member_all_paid_coins - member_all_paid_copay;
+//					alert(2);
+//					alert(+tot_annual_premium_j);
+//					alert(+member_all_paid_ded);
+//					alert(member_all_paid_coins);
+//					alert(+member_all_paid_copay);
+//					alert(+member_FSA_HSA_savings);
 					var tot_cost_to_subscriber_j =  +tot_annual_premium_j + +member_all_paid_ded + member_all_paid_coins 
 						+ +member_all_paid_copay - +member_FSA_HSA_savings ;
 					
@@ -595,13 +540,7 @@
 					"6. Annual Tax Savings from HSA & FSA: $" + member_FSA_HSA_savings.toFixed(0) + "\r\n" +
 					"7. TOTAL COST TO SUBSCRIBER, WRITE THIS AMOUNT): $" + tot_cost_to_subscriber_j.toFixed());
 
-	//				alert(tot_annual_premium_j);
-					
-				
-//				alert(administration)
-//				alert(Tot_cost_family_j);
-//				alert(deductible_I_id_j);
-//				alert(1);
+
 			}
 			
 			
