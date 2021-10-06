@@ -5,13 +5,15 @@
 <!--	<meta charset ='utf-8>
  	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
 
+		 
+
 	<title> HEALTHCARE COST CALCULATOR </title>
  --> 	
 </head>
 
 <body>
 		<h1 style="color:white; font-size:30px; background-color:blue;" > ***HEALTH CARE TOTAL COST CALCULATOR (INSURANCE+EXPENSES)***  </h1>
-		<h2 style="color:white; font-size:20px; background-color:red;" > Our Goal is to bring Transparency in Health Care Industry and reduce cost to 
+		<h2 style="color:white; font-size:20px; background-color:grey;" > Our Goal is to bring Transparency in Health Care Industry and reduce cost to 
 		subscribers. Here we provide upfront insurance comparison tool so you can identify the right insurance option & estimated expenses for next year. 
 		This tool is just a start and work in progress tool. Use your own judgement for final decision. No all features are available yet so may not fit 
 		your all needs. </h2>
@@ -19,86 +21,195 @@
 		<h3 style="color:white; font-size:20px; background-color:purple;" > Steps: <br>(1) Ask your employer for your Insurance Options for 2022 if you have 
 		multiple and fill below one at a time, <br> (2) Guestimate your & family's next year Health Expenses & fill below <br>(3) Enter all the Values in the 
 		form below & Submit to see total estimated cost to your pocket </h3> 
-	
-		<form>
+
+		 	
+		<form id="insurance" method="post" >
 		
-			<p>  <b> 1. Profile Information: </b>
-				<input type="text" name="name" id="name-id" maxlength="20" placeholder="Full Name" value=""/>
+			<p>
+				
+				<b> 1. Profile Information: </b>
+				<input style="border:none; text-align:right; color:green;" type="text" maxlength="20" value="Full Name:" readonly  />
+				<input type="text" name="name" id="name-id" maxlength="20" placeholder=""; />
+				<input style="border:none; text-align:right; color:green;" type="text" maxlength="40" value="Email address:" readonly  />
 				<input type="email" name="email" id="email-id" maxlength="40" placeholder="Email address" /> <p> 
 				 				
 			
 			<p> <b> 2. Insurance Plan Option - Fill from what your employer told you (In-network only) : </b><p>
 				<p>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Individual Deductible:" readonly  />
 				<input type="number" name="deductible-I" id="deductible-I-id" placeholder="Indiv. deductible" value="500"/>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Family Deductible :" readonly  />
 				<input type="number" name="deductible-F" id="deductible-F-id" placeholder="Family. deductible" value="1000"/>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Coinsurance % :" readonly  />	
 				<input type="number" name="coinsurance" id="coinsurance-id" placeholder="Coinsurance %" value="90"/> <br>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Out of Pocket-Individual:" readonly  />	
 				<input type="number" name="outofpocket-I" id="outofpocket-I-id" placeholder="Out of Pocket Indiv" value="2000"/>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Out of Pocket-Family :" readonly  />	
 				<input type="number" name="outofpocket-F" id="outofpocket-F-id" placeholder="Out of Pocket Family" value="4000"/><br>
-				<input type="radio" id="embedded-id" name="administration" value="Embedded" /> 
+			<input style="border:none; text-align:right; color:green;" type="text" value="Administration Type :" readonly  />	
+				<input type="radio" id="embedded-id" name="administration" value="Embedded" checked/> 
 				<label for ="embedded-id">Embedded</label>
 				<input type="radio" id="agreegate-id" name="administration" value="Agreegate" />
 				<label for ="agreegate-id">Agreegate</label> <br>
-				<input type="number" name="pcpvisit-copay" id="pcpvisit-copay-id" placeholder="PCP Visit Copay" value="15"/>
+			
+			<input style="border:none; text-align:right; color:green;" type="text" value="PCP Visit Copay:" readonly  />	
+				<input type="number" name="pcpvisit-copay" id="pcpvisit-copay-id" placeholder="PCP Visit Copay" value="0"/>
 
+
+			<input style="border:none; text-align:right; color:green;" type="text" value="Specialist Visit Copay:" readonly  />	
+				<input type="number" name="specialistvisit-copay" id="specialistvisit-copay-id" placeholder="Specialist Visit Copay" value="0"/> <br>
+
+			<input style="border:none; text-align:right; color:green;" type="text" value="Urgent Visit Copay:" readonly  />	
+				<input type="number" name="urgentvisit-copay" id="urgentvisit-copay-id" placeholder="urgent Visit Copay" value="0"/> <br>
+
+			<input style="border:none; text-align:right; color:green;" type="text" value="15 days Premium :" readonly  />	
 				<input type="number" name="per-paycheck-premium" id="per-paycheck-premium-id" placeholder="15 days premium" value="644.97"/>
-				<input type="number" name="FSA-contribution" id="FSA-contribution-id" placeholder="FSA Annual Contribution" value="1000"/>
+			<input style="border:none; text-align:right; color:green;" type="text" value="No. of months with work:" readonly  />	
+				<input type="number" name="per-paycheck-premium-mon" id="per-paycheck-premium-id-mon" placeholder="Number of Months" value="12"/> <br>
+
+			<input style="border:none; text-align:right; color:green;" type="text" value="FSA annual Contribution:" readonly  />	
+				<input type="number" name="FSA-contribution" id="FSA-contribution-id" placeholder="FSA Annual Contribution" value="1000"/> 
+			<input style="border:none; text-align:right; color:green;" type="text" value="HSA Annual Contribution:" readonly  />	
 				<input type="number" name="HSA-contribution" id="HSA-contribution-id" placeholder="HSA Annual Contribution" value="6500"/>
-				<input type="number" name="tax-bracket" id="tax-bracket-id" placeholder="Average Tax Rate % i.e. 25%" value="25"/>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Your tax Rate %:" readonly  />	
+				<input type="number" name="tax-bracket" id="tax-bracket-id" placeholder="Average Tax Rate % i.e. 25%" value="25"/> <br>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Employer HSA Annual Contribution :" readonly  />	
 				<input type="number" name="empHSA-contribution" id="empHSA-contribution-id" placeholder="Emp HSA Annual Contribution" value="250"/>
 				<p> 
 				
 			<p> <b>3. Expenses - Fill what you think will be your doctor's visits or expenses for next year (do not include Free/Preventive visits) : 
-			<p> 3.1 Primary Subscriber's estimated 2022 expenses: </b><br>
+			<p> 3.1 Primary Subscriber's estimated 2022 expenses (in network/including co-pay/cost after insurance discount): </b><br>
 				
-				<input type="number" name="PCP-visits-1" id="PCP-visits-1-id" placeholder="PCP Visits Counts" value="3"/>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated PCP Visits :" readonly  />	
+				<input type="number" name="PCP-visits-1" id="PCP-visits-1-id" placeholder="PCP Visits Counts" value="0"/>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Cost per Visit :" readonly  />		
 				<input type="number" name="PCP-visits-cost-1" id="PCP-visits-cost-1-id" placeholder="Avg Cost per PCP Visit" value="300"/> <br>
-				<input type="number" name="lab-xray-radiology-visits-1" id="lab-xray-radiology-visits-1-id" placeholder="lab-xray-radiology Visits Counts" 
-				value="1"/>
-				<input type="number" name="lab-xray-radiology-visits-cost-1" id="lab-xray-radiology-visits-cost-1-id" 
-				placeholder="Avg Cost per lab-xray-radiology Visit" value="250"/><br>
+
+
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Specialist Visits :" readonly  />	
+				<input type="number" name="specialist-visits-1" id="specialist-visits-1-id" placeholder="Specialist Visits Counts" value="0"/>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Cost per Visit :" readonly  />		
+				<input type="number" name="specialist-visits-cost-1" id="specialist-visits-cost-1-id" placeholder="Avg Cost per Specialist Visit" value="300"/> <br>
+
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated urgent Visits :" readonly  />	
+			<input type="number" name="urgent-visits-1" id="urgent-visits-1-id" placeholder="urgent Visits Counts" value="0"/>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Cost per Visit :" readonly  />		
+			<input type="number" name="urgent-visits-cost-1" id="urgent-visits-cost-1-id" placeholder="Avg Cost per urgent Visit" value="300"/> <br>
+
+
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Lab,XRAY, Ultrasound Visits :" readonly  />	
+			<input type="number" name="lxu-visits-1" id="lxu-visits-1-id" placeholder="LXU Visits Counts" value="0"/>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Cost per Visit :" readonly  />		
+			<input type="number" name="lxu-visits-cost-1" id="lxu-visits-cost-1-id" placeholder="Avg Cost per LXU Visit" value="300"/> <br>
+ 
 							
 				
 			<p> <b>3.2 Spouse's estimated 2022 expenses:  </b><br>
-				<input type="number" name="PCP-visits-2" id="PCP-visits-2-id" placeholder="PCP Visits Counts" value="2"/>
-				<input type="number" name="PCP-visits-cost-2" id="PCP-visits-cost-2-id" placeholder="Avg Cost per PCP Visit" value="240"/> <br>
-				<input type="number" name="lab-xray-radiology-visits-2" id="lab-xray-radiology-visits-2-id" placeholder="lab-xray-radiology Visits Counts" 
-				value="0"/>
-				<input type="number" name="lab-xray-radiology-visits-cost-2" id="lab-xray-radiology-visits-cost-2-id" 
-				placeholder="Avg Cost per lab-xray-radiology Visit" value="0"/><br>
-				
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated PCP Visits :" readonly  />	
+				<input type="number" name="PCP-visits-2" id="PCP-visits-2-id" placeholder="PCP Visits Counts" value="1"/>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Cost per Visit :" readonly  />		
+				<input type="number" name="PCP-visits-cost-2" id="PCP-visits-cost-2-id" placeholder="Avg Cost per PCP Visit" value="200"/> <br>
+
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Specialist Visits :" readonly  />	
+				<input type="number" name="specialist-visits-2" id="specialist-visits-2-id" placeholder="Specialist Visits Counts" value="0"/>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Cost per Visit :" readonly  />		
+				<input type="number" name="specialist-visits-cost-2" id="specialist-visits-cost-2-id" placeholder="Avg Cost per Specialist Visit" value="200"/> <br>
+
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated urgent Visits :" readonly  />	
+				<input type="number" name="urgent-visits-2" id="urgent-visits-2-id" placeholder="urgent Visits Counts" value="0"/>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Cost per Visit :" readonly  />		
+				<input type="number" name="urgent-visits-cost-2" id="urgent-visits-cost-2-id" placeholder="Avg Cost per urgent Visit" value="200"/> <br>
+
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Lab Xray US Visits :" readonly  />	
+				<input type="number" name="lxu-visits-2" id="lxu-visits-2-id" placeholder="LXU Visits Counts" value="0"/>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Cost per Visit :" readonly  />		
+				<input type="number" name="lxu-visits-cost-2" id="lxu-visits-cost-2-id" placeholder="Avg Cost per LXU Visit" value="200"/> <br>
+
+  				
 			<p> <b>3.3 Child-1's estimated 2022 expenses: </b> <br>
-				<input type="number" name="PCP-visits-3" id="PCP-visits-3-id" placeholder="PCP Visits Counts" value="2"/>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated PCP Visits :" readonly  />	
+				<input type="number" name="PCP-visits-3" id="PCP-visits-3-id" placeholder="PCP Visits Counts" value="0"/>
+
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Cost per Visit :" readonly  />		
 				<input type="number" name="PCP-visits-cost-3" id="PCP-visits-cost-3-id" placeholder="Avg Cost per PCP Visit" value="100"/> <br>
-				<input type="number" name="lab-xray-radiology-visits-3" id="lab-xray-radiology-visits-3-id" 
-				placeholder="lab-xray-radiology Visits Counts" value="0"/>
-				<input type="number" name="lab-xray-radiology-visits-cost-3" id="lab-xray-radiology-visits-cost-3-id" 
-				placeholder="Avg Cost per lab-xray-radiology Visit" value="0"/><br>
-				
+
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Specialist Visits :" readonly  />	
+				<input type="number" name="specialist-visits-3" id="specialist-visits-3-id" placeholder="Specialist Visits Counts" value="0"/>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Cost per Visit :" readonly  />		
+				<input type="number" name="specialist-visits-cost-3" id="specialist-visits-cost-3-id" placeholder="Avg Cost per Specialist Visit" value="300"/> <br>
+
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated urgent Visits :" readonly  />	
+				<input type="number" name="urgent-visits-3" id="urgent-visits-3-id" placeholder="urgent Visits Counts" value="0"/>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Cost per Visit :" readonly  />		
+				<input type="number" name="urgent-visits-cost-3" id="urgent-visits-cost-3-id" placeholder="Avg Cost per urgent Visit" value="300"/> <br>
+
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated lab XRAY US Visits :" readonly  />	
+				<input type="number" name="lxu-visits-3" id="lxu-visits-3-id" placeholder="LXU Visits Counts" value="0"/>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Cost per Visit :" readonly  />		
+				<input type="number" name="lxu-visits-cost-3" id="lxu-visits-cost-3-id" placeholder="Avg Cost per lxu Visit" value="300"/> <br>
+
+ 				
 			<p><b> 3.4 Child-2's estimated 2022 expenses:  </b><br>
-				<input type="number" name="PCP-visits-4" id="PCP-visits-4-id" placeholder="PCP Visits Counts" value="1"/>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated PCP Visits :" readonly  />	
+				<input type="number" name="PCP-visits-4" id="PCP-visits-4-id" placeholder="PCP Visits Counts" value="0"/>
+
+
+			
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Cost per Visit :" readonly  />		
 				<input type="number" name="PCP-visits-cost-4" id="PCP-visits-cost-4-id" placeholder="Avg Cost per PCP Visit" value="120"/> <br>
-				<input type="number" name="lab-xray-radiology-visits-4" id="lab-xray-radiology-visits-4-id" 
-				placeholder="lab-xray-radiology Visits Counts" value="0"/>
-				<input type="number" name="lab-xray-radiology-visits-cost-4" id="lab-xray-radiology-visits-cost-4-id" 
-				placeholder="Avg Cost per lab-xray-radiology Visit" value="0"/><br>
+
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Specialist Visits :" readonly  />	
+				<input type="number" name="specialist-visits-4" id="specialist-visits-4-id" placeholder="Specialist Visits Counts" value="0"/>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Cost per Visit :" readonly  />		
+				<input type="number" name="specialist-visits-cost-4" id="specialist-visits-cost-4-id" placeholder="Avg Cost per Specialist Visit" value="300"/> <br>
+
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated urgent Visits :" readonly  />	
+			<input type="number" name="urgent-visits-4" id="urgent-visits-4-id" placeholder="urgent Visits Counts" value="0"/>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Cost per Visit :" readonly  />		
+			<input type="number" name="urgent-visits-cost-4" id="urgent-visits-cost-4-id" placeholder="Avg Cost per urgent Visit" value="300"/> <br>
+
+
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Lab XRAY US Visits :" readonly  />	
+			<input type="number" name="lxu-visits-4" id="lxu-visits-4-id" placeholder="LXU Visits Counts" value="0"/>
+			<input style="border:none; text-align:right; color:green;" type="text" value="Estimated Cost per Visit :" readonly  />		
+			<input type="number" name="lxu-visits-cost-4" id="lxu-visits-cost-4-id" placeholder="Avg Cost per LXU Visit" value="300"/> <br>
+
+ 
 
 			<p> <input type="submit" name="submit" value="Submit" onclick="Calculation();"> <p>
-			
+			  
+			   	     
+
 		
-		</form>
-		
+
 		<script>
 		
+			function prefill() {
+			
+				 alert(document.forms['name-id'].value);
+				 
+								 
+			}
+
 			function Calculation(){ 
+				 
+				 				
+//				alert(1);
 				var	deductible_I_id_j=document.getElementById("deductible-I-id").value;
 				var	deductible_F_id_j=document.getElementById("deductible-F-id").value;
 				var	coinsurance_id_j=document.getElementById("coinsurance-id").value;
 				var per_paycheck_premium_j=document.getElementById("per-paycheck-premium-id").value;
+				var per_paycheck_premium_j_mon=document.getElementById("per-paycheck-premium-id-mon").value;
 				var PCP_visits_1_id_j=document.getElementById("PCP-visits-1-id").value; 
 				var PCP_visits_2_id_j=document.getElementById("PCP-visits-2-id").value; 
 				var PCP_visits_3_id_j=document.getElementById("PCP-visits-3-id").value; 
 				var PCP_visits_4_id_j=document.getElementById("PCP-visits-4-id").value; 
 				var pcpvisit_copay_id_j=document.getElementById("pcpvisit-copay-id").value;
+				var specialistvisit_copay_id_j=document.getElementById("specialistvisit-copay-id").value;
+
+				var urgentvisit_copay_id_j=document.getElementById("urgentvisit-copay-id").value;
+
+
 				var FSA_contribution_id_j=document.getElementById("FSA-contribution-id").value;
 				var HSA_contribution_id_j=document.getElementById("HSA-contribution-id").value;
 				var tax_bracket_id_j=document.getElementById("tax-bracket-id").value;
@@ -107,7 +218,7 @@
 				var outofpocket_F_id_j=document.getElementById("outofpocket-F-id").value;
 							
 					
-//				alert(per_paycheck_premium_j);
+//				alert(123);
 				var embedded_j=document.getElementById("embedded-id").checked;
 //				alert(document.getElementById('embedded-id').checked);
 				var agreegate_j=document.getElementById("agreegate-id").checked;
@@ -116,35 +227,99 @@
 				var	PCP_visits_1_j=document.getElementById("PCP-visits-1-id").value;
 				var	PCP_visits_cost_1_j=document.getElementById("PCP-visits-cost-1-id").value;
 				var PCP_visits_Tot_cost_1_j = PCP_visits_1_j*PCP_visits_cost_1_j;
+
+//				alert(7);
+				var	specialist_visits_1_j=document.getElementById("specialist-visits-1-id").value;
+				var	specialist_visits_cost_1_j=document.getElementById("specialist-visits-cost-1-id").value;
+				var specialist_visits_Tot_cost_1_j = specialist_visits_1_j*specialist_visits_cost_1_j;
+
+				var	urgent_visits_1_j=document.getElementById("urgent-visits-1-id").value;
+				var	urgent_visits_cost_1_j=document.getElementById("urgent-visits-cost-1-id").value;
+				var urgent_visits_Tot_cost_1_j = urgent_visits_1_j*urgent_visits_cost_1_j;
+
+
+				var	lxu_visits_1_j=document.getElementById("lxu-visits-1-id").value;
+				var	lxu_visits_cost_1_j=document.getElementById("lxu-visits-cost-1-id").value;
+				var lxu_visits_Tot_cost_1_j = lxu_visits_1_j*lxu_visits_cost_1_j;
+
+
+//				alert(8);
 //				alert(PCP_visits_Tot_cost_1_j);
-				
+//				alert(456);
 				var	PCP_visits_2_j=document.getElementById("PCP-visits-2-id").value;
 				var	PCP_visits_cost_2_j=document.getElementById("PCP-visits-cost-2-id").value;
 				var PCP_visits_Tot_cost_2_j = PCP_visits_2_j*PCP_visits_cost_2_j;
 
+				var	specialist_visits_2_j=document.getElementById("specialist-visits-2-id").value;
+				var	specialist_visits_cost_2_j=document.getElementById("specialist-visits-cost-2-id").value;
+				var specialist_visits_Tot_cost_2_j = specialist_visits_2_j*specialist_visits_cost_2_j;
+
+				var	urgent_visits_2_j=document.getElementById("urgent-visits-2-id").value;
+				var	urgent_visits_cost_2_j=document.getElementById("urgent-visits-cost-2-id").value;
+				var urgent_visits_Tot_cost_2_j = urgent_visits_2_j*urgent_visits_cost_2_j;
+
+				var	lxu_visits_2_j=document.getElementById("lxu-visits-2-id").value;
+				var	lxu_visits_cost_2_j=document.getElementById("lxu-visits-cost-2-id").value;
+				var lxu_visits_Tot_cost_2_j = lxu_visits_2_j*lxu_visits_cost_2_j;
+
+
+//				alert(9);
 				var	PCP_visits_3_j=document.getElementById("PCP-visits-3-id").value;
 				var	PCP_visits_cost_3_j=document.getElementById("PCP-visits-cost-3-id").value;
 				var PCP_visits_Tot_cost_3_j = PCP_visits_3_j*PCP_visits_cost_3_j;
 
+//				alert(10);
+
+				var	specialist_visits_3_j=document.getElementById("specialist-visits-3-id").value;
+				var	specialist_visits_cost_3_j=document.getElementById("specialist-visits-cost-3-id").value;
+				var specialist_visits_Tot_cost_3_j = specialist_visits_3_j*specialist_visits_cost_3_j;
+
+				var	urgent_visits_3_j=document.getElementById("urgent-visits-3-id").value;
+				var	urgent_visits_cost_3_j=document.getElementById("urgent-visits-cost-3-id").value;
+				var urgent_visits_Tot_cost_3_j = urgent_visits_3_j*urgent_visits_cost_3_j;
+
+				var	lxu_visits_3_j=document.getElementById("lxu-visits-3-id").value;
+				var	lxu_visits_cost_3_j=document.getElementById("lxu-visits-cost-3-id").value;
+				var lxu_visits_Tot_cost_3_j = lxu_visits_3_j*lxu_visits_cost_3_j;
 
 				var	PCP_visits_4_j=document.getElementById("PCP-visits-4-id").value;
 				var	PCP_visits_cost_4_j=document.getElementById("PCP-visits-cost-4-id").value;
 				var PCP_visits_Tot_cost_4_j = PCP_visits_4_j*PCP_visits_cost_4_j;
 //				alert(PCP_visits_Tot_cost_4_j);
 				
-				var Tot_cost_family_1 = PCP_visits_Tot_cost_1_j  
-				var Tot_cost_family_2 = PCP_visits_Tot_cost_2_j 
-				var Tot_cost_family_3 = PCP_visits_Tot_cost_3_j 
-				var Tot_cost_family_4 = PCP_visits_Tot_cost_4_j 
+//				alert(11);
+				var	specialist_visits_4_j=document.getElementById("specialist-visits-4-id").value;
+				var	specialist_visits_cost_4_j=document.getElementById("specialist-visits-cost-4-id").value;
+				var specialist_visits_Tot_cost_4_j = specialist_visits_4_j*specialist_visits_cost_4_j;
+
+
+				var	urgent_visits_4_j=document.getElementById("urgent-visits-4-id").value;
+				var	urgent_visits_cost_4_j=document.getElementById("urgent-visits-cost-4-id").value;
+				var urgent_visits_Tot_cost_4_j = urgent_visits_4_j*urgent_visits_cost_4_j;
+
+				var	lxu_visits_4_j=document.getElementById("lxu-visits-4-id").value;
+				var	lxu_visits_cost_4_j=document.getElementById("lxu-visits-cost-4-id").value;
+				var lxu_visits_Tot_cost_4_j = lxu_visits_4_j*lxu_visits_cost_4_j;
 				
+//				alert(12);
+
+				var Tot_cost_family_1 = PCP_visits_Tot_cost_1_j  + specialist_visits_Tot_cost_1_j + urgent_visits_Tot_cost_1_j + lxu_visits_Tot_cost_1_j;
+				var Tot_cost_family_2 = PCP_visits_Tot_cost_2_j  + specialist_visits_Tot_cost_2_j + urgent_visits_Tot_cost_2_j + lxu_visits_Tot_cost_2_j;
+				var Tot_cost_family_3 = PCP_visits_Tot_cost_3_j  + specialist_visits_Tot_cost_3_j + urgent_visits_Tot_cost_3_j + lxu_visits_Tot_cost_3_j;
+				var Tot_cost_family_4 = PCP_visits_Tot_cost_4_j  + specialist_visits_Tot_cost_4_j + urgent_visits_Tot_cost_4_j + lxu_visits_Tot_cost_4_j;
+				
+
+//				alert(789);
 				var Tot_cost_family_j = PCP_visits_Tot_cost_1_j +PCP_visits_Tot_cost_2_j+PCP_visits_Tot_cost_3_j+PCP_visits_Tot_cost_4_j;
 //				alert(Tot_cost_family_j);
-				
+//				alert(212);				
 	//			function Check-split-of-tot-cost(Tot_cost_family_j);
 				Check_split_of_tot_cost(per_paycheck_premium_j,Tot_cost_family_j,Tot_cost_family_1,Tot_cost_family_2,Tot_cost_family_3,Tot_cost_family_4,
 				deductible_I_id_j,deductible_F_id_j,coinsurance_id_j,embedded_j,agreegate_j,PCP_visits_1_id_j,PCP_visits_2_id_j,PCP_visits_3_id_j,
 				PCP_visits_4_id_j,pcpvisit_copay_id_j,FSA_contribution_id_j,HSA_contribution_id_j,tax_bracket_id_j,empHSA_contribution_id_j,outofpocket_I_id_j,
-				outofpocket_F_id_j);
+				outofpocket_F_id_j,per_paycheck_premium_j_mon,specialistvisit_copay_id_j,specialist_visits_1_j,specialist_visits_2_j,specialist_visits_3_j,specialist_visits_4_j,
+				urgentvisit_copay_id_j,urgent_visits_1_j,urgent_visits_2_j,urgent_visits_3_j,urgent_visits_4_j,lxu_visits_Tot_cost_1_j,lxu_visits_Tot_cost_2_j,lxu_visits_Tot_cost_3_j,
+				lxu_visits_Tot_cost_4_j);
 //				alert(123);
 				 		
 			//	var	specialist_visits_1_j=document.getElementById("specialist-visits-1-id").value;
@@ -156,12 +331,18 @@
 			}
 			
 			function Check_split_of_tot_cost(per_paycheck_premium_j,Tot_cost_family_j,Tot_cost_family_1,Tot_cost_family_2,Tot_cost_family_3,Tot_cost_family_4,
-			deductible_I_id_j,deductible_F_id_j,coinsurance_id_j,embedded_j,agreegate_j,PCP_visits_1_id_j,PCP_visits_2_id_j,PCP_visits_3_id_j,PCP_visits_4_id_j,
-			pcpvisit_copay_id_j,FSA_contribution_id_j,HSA_contribution_id_j,tax_bracket_id_j,empHSA_contribution_id_j,outofpocket_I_id_j,outofpocket_F_id_j) {
+			deductible_I_id_j,deductible_F_id_j,coinsurance_id_j,embedded_j,agreegate_j,PCP_visits_1_id_j,PCP_visits_2_id_j,PCP_visits_3_id_j,
+			PCP_visits_4_id_j,pcpvisit_copay_id_j,FSA_contribution_id_j,HSA_contribution_id_j,tax_bracket_id_j,empHSA_contribution_id_j,outofpocket_I_id_j,
+			outofpocket_F_id_j,per_paycheck_premium_j_mon,specialistvisit_copay_id_j,specialist_visits_1_j,specialist_visits_2_j,specialist_visits_3_j,specialist_visits_4_j,
+			urgentvisit_copay_id_j,urgent_visits_1_j,urgent_visits_2_j,urgent_visits_3_j,urgent_visits_4_j,lxu_visits_Tot_cost_1_j,lxu_visits_Tot_cost_2_j,lxu_visits_Tot_cost_3_j,
+			lxu_visits_Tot_cost_4_j) {
 				
-//				alert(agreegate_j);
-				var member_all_paid_copay = (+PCP_visits_1_id_j + +PCP_visits_2_id_j + +PCP_visits_3_id_j + +PCP_visits_4_id_j)* pcpvisit_copay_id_j;
-					
+//				alert(124);
+				var member_all_paid_copay = (+PCP_visits_1_id_j + +PCP_visits_2_id_j + +PCP_visits_3_id_j + +PCP_visits_4_id_j)* pcpvisit_copay_id_j + 
+					(+specialist_visits_1_j + +specialist_visits_2_j + +specialist_visits_3_j + +specialist_visits_4_j) * specialistvisit_copay_id_j +
+					(+urgent_visits_1_j + +urgent_visits_2_j + +urgent_visits_3_j + +urgent_visits_4_j) * urgentvisit_copay_id_j ;
+				
+//				alert(125);	
 				if (embedded_j == true) {
 //					alert(2);
 					if (Tot_cost_family_1 <= deductible_I_id_j) {
@@ -171,17 +352,28 @@
 //						member_1_paid_copay = 0;
 					}
 					if (Tot_cost_family_1 > deductible_I_id_j) {
-//						alert(deductible_I_id_j);
+	//					alert(deductible_I_id_j);
+	//					alert(61);
 						var member_1_paid_ded =  deductible_I_id_j;
-						var member_1_paid_coins = (Tot_cost_family_1 - deductible_I_id_j - PCP_visits_1_id_j*pcpvisit_copay_id_j)*
-							(100 - coinsurance_id_j)/100;
-						var member_1_running_pocket_cost = +member_1_paid_ded + PCP_visits_1_id_j*pcpvisit_copay_id_j + +member_1_paid_coins;
+						var member_1_paid_coins = (Tot_cost_family_1 - deductible_I_id_j - PCP_visits_1_id_j*pcpvisit_copay_id_j - 
+							specialist_visits_1_j*specialistvisit_copay_id_j - urgent_visits_1_j*urgentvisit_copay_id_j)*(100 - coinsurance_id_j)/100;
+						var member_1_running_pocket_cost = +member_1_paid_ded + PCP_visits_1_id_j*pcpvisit_copay_id_j + specialist_visits_1_j*specialistvisit_copay_id_j + 									urgent_visits_1_j*urgentvisit_copay_id_j +member_1_paid_coins;
 	//					alert(member_1_running_pocket_cost);
-		//				alert(outofpocket_I_id_j);
-						
-						
+	//					alert(outofpocket_I_id_j);
+	//					alert(3 + specialist_visits_1_id_j);
+	//					alert(member_1_running_pocket_cost);
+	//					alert(outofpocket_I_id_j);
 							if (member_1_running_pocket_cost > outofpocket_I_id_j) {
-								member_1_paid_coins = outofpocket_I_id_j - member_1_paid_ded - PCP_visits_1_id_j*pcpvisit_copay_id_j;
+	//							alert(1+outofpocket_I_id_j);
+	//							alert(2+member_1_paid_ded);
+	//							alert(3+PCP_visits_1_id_j);
+	//							alert(4+pcpvisit_copay_id_j);
+	//							alert(5+specialist_visits_1_j);
+	//							alert(6+specialistvisit_copay_id_j);
+	//							alert(7+urgent_visits_1_j);
+	//							alert(8+urgentvisit_copay_id_j);
+								member_1_paid_coins = outofpocket_I_id_j - member_1_paid_ded - PCP_visits_1_id_j*pcpvisit_copay_id_j - 
+								specialist_visits_1_j*specialistvisit_copay_id_j - urgent_visits_1_j*urgentvisit_copay_id_j;
 	//							alert(+member_1_running_pocket_cost);
 		//						alert(+member_1_paid_coins);
 							}
@@ -191,17 +383,25 @@
 					}
 //							alert(member_1_paid_ded);
 	//						alert(member_1_paid_coins);
-							
+//					alert(4);
+//					alert(member_2_paid_ded);
+		
 					if (Tot_cost_family_2 <= deductible_I_id_j) {
 						var member_2_paid_ded =  Tot_cost_family_2;
 						var member_2_paid_coins = 0;
 					}
+//					alert(26);
+//					alert(Tot_cost_family_2);
+//					alert(deductible_I_id_j);
 					if (Tot_cost_family_2 > deductible_I_id_j) {
 						var member_2_paid_ded =  deductible_I_id_j;
-						var member_2_paid_coins = (Tot_cost_family_2 - deductible_I_id_j - PCP_visits_2_id_j*pcpvisit_copay_id_j)*(100 - coinsurance_id_j)/100;
-						var member_2_running_pocket_cost = +member_2_paid_ded + PCP_visits_2_id_j*pcpvisit_copay_id_j + +member_2_paid_coins;
+						var member_2_paid_coins = (Tot_cost_family_2 - deductible_I_id_j - PCP_visits_2_id_j*pcpvisit_copay_id_j - specialist_visits_2_j*specialistvisit_copay_id_j
+						- urgent_visits_2_j*urgentvisit_copay_id_j)*(100 - coinsurance_id_j)/100;
+						var member_2_running_pocket_cost = +member_2_paid_ded + PCP_visits_2_id_j*pcpvisit_copay_id_j + +specialist_visits_2_j*specialistvisit_copay_id_j + 
+							+urgent_visits_2_j*urgentvisit_copay_id_j + +member_2_paid_coins;
 							if (member_2_running_pocket_cost > outofpocket_I_id_j) {
-								member_2_paid_coins = outofpocket_I_id_j - member_2_paid_ded - PCP_visits_2_id_j*pcpvisit_copay_id_j;
+								member_2_paid_coins = outofpocket_I_id_j - member_2_paid_ded - PCP_visits_2_id_j*pcpvisit_copay_id_j - 
+								specialist_visits_2_j*specialistvisit_copay_id_j - urgent_visits_2_j*urgentvisit_copay_id_j;
 	//							alert(+member_1_running_pocket_cost);
 		//						alert(+member_1_paid_coins);
 							}
@@ -218,10 +418,12 @@
 					}
 					if (Tot_cost_family_3 > deductible_I_id_j) {
 						var member_3_paid_ded =  deductible_I_id_j;
-						var member_3_paid_coins = (Tot_cost_family_3 - deductible_I_id_j - PCP_visits_3_id_j*pcpvisit_copay_id_j)*(100 - coinsurance_id_j)/100;
-						var member_3_running_pocket_cost = +member_3_paid_ded + PCP_visits_3_id_j*pcpvisit_copay_id_j + +member_3_paid_coins;
+						var member_3_paid_coins = (Tot_cost_family_3 - deductible_I_id_j - PCP_visits_3_id_j*pcpvisit_copay_id_j - specialist_visits_3_j*specialistvisit_copay_id_j
+							- urgent_visits_3_j*urgentvisit_copay_id_j)*(100 - coinsurance_id_j)/100;
+						var member_3_running_pocket_cost = +member_3_paid_ded + PCP_visits_3_id_j*pcpvisit_copay_id_j + +specialist_visits_3_j*specialistvisit_copay_id_j + 
+							+urgent_visits_3_j*urgentvisit_copay_id_j + +member_3_paid_coins;
 							if (member_3_running_pocket_cost > outofpocket_I_id_j) {
-								member_3_paid_coins = outofpocket_I_id_j - member_3_paid_ded - PCP_visits_3_id_j*pcpvisit_copay_id_j;
+								member_3_paid_coins = outofpocket_I_id_j - member_3_paid_ded - PCP_visits_3_id_j*pcpvisit_copay_id_j - 															specialist_visits_3_j*specialistvisit_copay_id_j - urgent_visits_3_j*urgentvisit_copay_id_j;
 	//							alert(+member_1_running_pocket_cost);
 		//						alert(+member_1_paid_coins);
 							}
@@ -240,10 +442,12 @@
 					}
 					if (Tot_cost_family_4 > deductible_I_id_j) {
 						var member_4_paid_ded =  deductible_I_id_j;
-						var member_4_paid_coins = (Tot_cost_family_4 - deductible_I_id_j - PCP_visits_4_id_j*pcpvisit_copay_id_j)*(100 - coinsurance_id_j)/100;
-						var member_4_running_pocket_cost = +member_4_paid_ded + PCP_visits_4_id_j*pcpvisit_copay_id_j + +member_4_paid_coins;
+						var member_4_paid_coins = (Tot_cost_family_4 - deductible_I_id_j - PCP_visits_4_id_j*pcpvisit_copay_id_j - specialist_visits_4_j*specialistvisit_copay_id_j
+						- urgent_visits_4_j*urgentvisit_copay_id_j)*(100 - coinsurance_id_j)/100;
+						var member_4_running_pocket_cost = +member_4_paid_ded + PCP_visits_4_id_j*pcpvisit_copay_id_j + +specialist_visits_4_j*specialistvisit_copay_id_j + 
+							+urgent_visits_4_j*urgentvisit_copay_id_j + +member_4_paid_coins;
 							if (member_4_running_pocket_cost > outofpocket_I_id_j) {
-								member_4_paid_coins = outofpocket_I_id_j - member_4_paid_ded - PCP_visits_4_id_j*pcpvisit_copay_id_j;
+								member_4_paid_coins = outofpocket_I_id_j - member_4_paid_ded - PCP_visits_4_id_j*pcpvisit_copay_id_j - 																specialist_visits_4_j*specialistvisit_copay_id_j - urgent_visits_4_j*urgentvisit_copay_id_j;
 	//							alert(+member_1_running_pocket_cost);
 		//						alert(+member_1_paid_coins);
 							}
@@ -257,6 +461,7 @@
 					
 					if (+member_1_paid_ded + +member_2_paid_ded + +member_3_paid_ded + +member_4_paid_ded > deductible_F_id_j) {
 //						alert(deductible_F_id_j);
+//						alert(member_1_paid_ded);
 						var member_all_paid_ded = deductible_F_id_j;
 						var member_all_paid_coins = (+Tot_cost_family_1 + +Tot_cost_family_2 + +Tot_cost_family_3 + +Tot_cost_family_4 - 
 						    member_all_paid_ded -member_all_paid_copay)*(100 - coinsurance_id_j)/100;
@@ -266,12 +471,14 @@
 					}
 						else {
 //							alert(35);
+//							alert(member_2_paid_ded); 
 							var member_all_paid_ded = +member_1_paid_ded + +member_2_paid_ded + +member_3_paid_ded + +member_4_paid_ded ;
 							var member_all_paid_coins = +member_1_paid_coins + +member_2_paid_coins + +member_3_paid_coins + +member_4_paid_coins;
+//							alert(member_all_paid_ded);
 						}
 				}
 
-
+//				alert(member_all_paid_ded);
 
 				if (agreegate_j == true) {
 //					console.log(agreegate_j);
@@ -370,7 +577,7 @@
 				}
 
 				
-					var tot_annual_premium_j = per_paycheck_premium_j * 24 ;
+					var tot_annual_premium_j = per_paycheck_premium_j * per_paycheck_premium_j_mon * 2 ;
 		//			var member_insurance_paid_coins = (+Tot_cost_family_1 + Tot_cost_family_2 + +Tot_cost_family_3 + +Tot_cost_family_4 - 
 			//		member_all_paid_ded - member_all_paid_coins);
 					var member_FSA_HSA_savings = +FSA_contribution_id_j*tax_bracket_id_j/100 + +HSA_contribution_id_j*tax_bracket_id_j/100 + 
