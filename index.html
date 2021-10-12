@@ -226,16 +226,33 @@
 				
 				var	PCP_visits_1_j=document.getElementById("PCP-visits-1-id").value;
 				var	PCP_visits_cost_1_j=document.getElementById("PCP-visits-cost-1-id").value;
+				
+
+				if ( pcpvisit_copay_id_j > 0) {
+					PCP_visits_cost_1_j = 0;
+				}
+
 				var PCP_visits_Tot_cost_1_j = PCP_visits_1_j*PCP_visits_cost_1_j;
 
 //				alert(7);
 				var	specialist_visits_1_j=document.getElementById("specialist-visits-1-id").value;
 				var	specialist_visits_cost_1_j=document.getElementById("specialist-visits-cost-1-id").value;
+
+				if ( specialistvisit_copay_id_j > 0) {
+					specialist_visits_cost_1_j = 0;
+				}
+
 				var specialist_visits_Tot_cost_1_j = specialist_visits_1_j*specialist_visits_cost_1_j;
 
 				var	urgent_visits_1_j=document.getElementById("urgent-visits-1-id").value;
 				var	urgent_visits_cost_1_j=document.getElementById("urgent-visits-cost-1-id").value;
+
+				if ( urgentvisit_copay_id_j > 0) {
+					urgent_visits_cost_1_j = 0;
+				}
+
 				var urgent_visits_Tot_cost_1_j = urgent_visits_1_j*urgent_visits_cost_1_j;
+//				alert(urgent_visits_Tot_cost_1_j);
 
 
 				var	lxu_visits_1_j=document.getElementById("lxu-visits-1-id").value;
@@ -248,14 +265,30 @@
 //				alert(456);
 				var	PCP_visits_2_j=document.getElementById("PCP-visits-2-id").value;
 				var	PCP_visits_cost_2_j=document.getElementById("PCP-visits-cost-2-id").value;
+
+
+				if ( pcpvisit_copay_id_j > 0) {
+					PCP_visits_cost_2_j = 0;
+				}
+
 				var PCP_visits_Tot_cost_2_j = PCP_visits_2_j*PCP_visits_cost_2_j;
 
 				var	specialist_visits_2_j=document.getElementById("specialist-visits-2-id").value;
 				var	specialist_visits_cost_2_j=document.getElementById("specialist-visits-cost-2-id").value;
+
+				if ( specialistvisit_copay_id_j > 0) {
+					specialist_visits_cost_2_j = 0;
+				}
+
 				var specialist_visits_Tot_cost_2_j = specialist_visits_2_j*specialist_visits_cost_2_j;
 
 				var	urgent_visits_2_j=document.getElementById("urgent-visits-2-id").value;
 				var	urgent_visits_cost_2_j=document.getElementById("urgent-visits-cost-2-id").value;
+
+				if ( urgentvisit_copay_id_j > 0) {
+					urgent_visits_cost_2_j = 0;
+				}
+
 				var urgent_visits_Tot_cost_2_j = urgent_visits_2_j*urgent_visits_cost_2_j;
 
 				var	lxu_visits_2_j=document.getElementById("lxu-visits-2-id").value;
@@ -266,16 +299,36 @@
 //				alert(9);
 				var	PCP_visits_3_j=document.getElementById("PCP-visits-3-id").value;
 				var	PCP_visits_cost_3_j=document.getElementById("PCP-visits-cost-3-id").value;
+
+
+
+				if ( pcpvisit_copay_id_j > 0) {
+					PCP_visits_cost_3_j = 0;
+				}
+
 				var PCP_visits_Tot_cost_3_j = PCP_visits_3_j*PCP_visits_cost_3_j;
 
 //				alert(10);
 
 				var	specialist_visits_3_j=document.getElementById("specialist-visits-3-id").value;
 				var	specialist_visits_cost_3_j=document.getElementById("specialist-visits-cost-3-id").value;
+
+
+				if ( specialistvisit_copay_id_j > 0) {
+					specialist_visits_cost_3_j = 0;
+				}
+
+
 				var specialist_visits_Tot_cost_3_j = specialist_visits_3_j*specialist_visits_cost_3_j;
 
 				var	urgent_visits_3_j=document.getElementById("urgent-visits-3-id").value;
 				var	urgent_visits_cost_3_j=document.getElementById("urgent-visits-cost-3-id").value;
+
+				if ( urgentvisit_copay_id_j > 0) {
+					urgent_visits_cost_3_j = 0;
+				}
+
+
 				var urgent_visits_Tot_cost_3_j = urgent_visits_3_j*urgent_visits_cost_3_j;
 
 				var	lxu_visits_3_j=document.getElementById("lxu-visits-3-id").value;
@@ -284,17 +337,35 @@
 
 				var	PCP_visits_4_j=document.getElementById("PCP-visits-4-id").value;
 				var	PCP_visits_cost_4_j=document.getElementById("PCP-visits-cost-4-id").value;
+
+
+				if ( pcpvisit_copay_id_j > 0) {
+					PCP_visits_cost_4_j = 0;
+				}
+
 				var PCP_visits_Tot_cost_4_j = PCP_visits_4_j*PCP_visits_cost_4_j;
 //				alert(PCP_visits_Tot_cost_4_j);
 				
 //				alert(11);
 				var	specialist_visits_4_j=document.getElementById("specialist-visits-4-id").value;
 				var	specialist_visits_cost_4_j=document.getElementById("specialist-visits-cost-4-id").value;
+
+				if ( specialistvisit_copay_id_j > 0) {
+					specialist_visits_cost_4_j = 0;
+				}
+
+
 				var specialist_visits_Tot_cost_4_j = specialist_visits_4_j*specialist_visits_cost_4_j;
 
 
 				var	urgent_visits_4_j=document.getElementById("urgent-visits-4-id").value;
 				var	urgent_visits_cost_4_j=document.getElementById("urgent-visits-cost-4-id").value;
+
+				if ( urgentvisit_copay_id_j > 0) {
+					urgent_visits_cost_4_j = 0;
+				}
+
+
 				var urgent_visits_Tot_cost_4_j = urgent_visits_4_j*urgent_visits_cost_4_j;
 
 				var	lxu_visits_4_j=document.getElementById("lxu-visits-4-id").value;
@@ -519,7 +590,7 @@
 					var tot_annual_premium_j = per_paycheck_premium_j * per_paycheck_premium_j_mon * 2 ;
 //					alert(4);
 					var member_FSA_HSA_savings = +FSA_contribution_id_j*tax_bracket_id_j/100 + +HSA_contribution_id_j*tax_bracket_id_j/100 + 
-						+empHSA_contribution_id_j;
+						+empHSA_contribution_id_j + +tot_annual_premium_j*tax_bracket_id_j/100;
 //					alert(3);
 					var member_insurance_paid_coins = Tot_cost_family_1 + Tot_cost_family_2 + Tot_cost_family_3 + Tot_cost_family_4 - member_all_paid_ded
 						- member_all_paid_coins - member_all_paid_copay;
@@ -535,9 +606,9 @@
 					alert("1. Premium to be Paid by Subscriber in 2022: $" + tot_annual_premium_j.toFixed(0) + "\r\n" + 
 					"2. Deductible Amount to be Paid by Subscriber in 2022: $" + member_all_paid_ded + "\r\n" + 	
 					"3. Coinsurance Amount to be Paid by Subscriber in 2022: $" + member_all_paid_coins.toFixed(0) + "\r\n" +
-					"4. Coinsurance Amount to be Paid by Insurance Co in 2022: $" + member_insurance_paid_coins.toFixed(0) + "\r\n" +
+//					"4. Coinsurance Amount to be Paid by Insurance Co in 2022: $" + member_insurance_paid_coins.toFixed(0) + "\r\n" +
 					"5. Annual Co-Pay paid by Subscriber: $" + member_all_paid_copay.toFixed(0) +"\r\n" +
-					"6. Annual Tax Savings from HSA & FSA: $" + member_FSA_HSA_savings.toFixed(0) + "\r\n" +
+					"6. Annual Tax Savings e.g. taxation, HSA & FSA: $" + member_FSA_HSA_savings.toFixed(0) + "\r\n" +
 					"7. TOTAL COST TO SUBSCRIBER, WRITE THIS AMOUNT): $" + tot_cost_to_subscriber_j.toFixed());
 
 
